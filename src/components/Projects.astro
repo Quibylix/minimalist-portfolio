@@ -1,0 +1,127 @@
+---
+import Github from "./icons/Github.astro";
+import Web from "./icons/Web.astro";
+---
+
+<section>
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <h3>Organize Now</h3>
+      <p class="technologies">Technologies: Next.js, Typescript, PostgreSQL.</p>
+      <p class="description">
+        Organize Now is a user-friendly to-do list application.
+      </p>
+      <p class="description">
+        In this project, I developed features such as user authentication,
+        internationalization, and SQL database management, including CRUD
+        operations.
+      </p>
+      <div>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/quibylix/organize-now"
+        >
+          Código
+          <Github />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://organize-now.fredibarraza.com"
+        >
+          Sitio web
+          <Web />
+        </a>
+      </div>
+    </li>
+    <li>
+      <h3>Tetris</h3>
+      <p class="technologies">Technologies: React, Typescript, Canvas.</p>
+      <p class="description">
+        The classic game of Tetris, where the player must rotate and move
+        falling blocks to create horizontal lines.
+      </p>
+      <p class="description">
+        With this project, I practiced my skills in canvas manipulation, game
+        logic, animations, keyboard events, and state management.
+      </p>
+      <div>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/quibylix/tetris"
+        >
+          Código
+          <Github />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://tetris-mocha-rho.vercel.app"
+        >
+          Sitio web
+          <Web />
+        </a>
+      </div>
+    </li>
+  </ul>
+
+  <style>
+    section {
+      margin: 3rem 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-bottom: 1.8rem;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      margin-top: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .technologies {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .description {
+      margin-top: 0.5rem;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #000;
+      padding: 0.3rem 0.8rem;
+      border-radius: 0.3rem;
+    }
+
+    div a:hover {
+      outline: 0.1rem solid #000;
+    }
+  </style>
+</section>
