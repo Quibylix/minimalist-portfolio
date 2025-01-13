@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/svg+xml" href="/light-mode-favicon.svg" />
+		<link media="(prefers-color-scheme: light)" rel="icon" type="image/svg+xml" href="/light-mode-favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Fredi Barraza - Minimalist Portfolio</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+
+	@font-face {
+		font-family: 'SpaceMono';
+		src: url("/fonts/space-mono/space-mono-regular.ttf") format("truetype");
+	}
+
+	@font-face {
+		font-family: 'SpaceMono';
+		src: url("/fonts/space-mono/space-mono-bold.ttf") format("truetype");
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: 'SpaceMono';
+		src: url("/fonts/space-mono/space-mono-italic.ttf") format("truetype");
+		font-style: italic;
+	}
+
+	html {
+		font-family: 'SpaceMono', monospace, Arial, Helvetica, sans-serif;
+	}
+</style>
