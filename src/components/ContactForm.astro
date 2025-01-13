@@ -1,0 +1,112 @@
+<form method="POST" id="form">
+  <input
+    type="hidden"
+    name="access_key"
+    value="e9589964-116d-4c06-8543-b6d3879dba32"
+  />
+
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="Your Name" required />
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email" placeholder="Your Email" required />
+  </label>
+  <label
+    >Message:
+    <textarea rows="4" name="message" placeholder="Your Message" required
+    ></textarea>
+  </label>
+  <input type="checkbox" name="botcheck" />
+
+  <p id="result"></p>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+  const form = document.getElementById("form")! as HTMLFormElement;
+  const result = document.getElementById("result") as HTMLParagraphElement;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Please wait...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async response => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = "Form submitted successfully";
+        } else {
+          result.innerHTML = json.message;
+        }
+      })
+      .catch(() => {
+        result.innerHTML = "Something went wrong!";
+      });
+  });
+</script>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #616161;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: 0.1rem solid #111;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  button {
+    font-family: inherit;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #616161;
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #111;
+  }
+
+  p {
+    font-weight: bold;
+  }
+</style>
