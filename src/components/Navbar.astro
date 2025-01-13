@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+import Menu from "./icons/Menu.astro";
+---
+
+<nav>
+  <a href="/" aria-label="Scroll to top">
+    <Image src={logo} alt="Fredi Barraza" />
+  </a>
+  <button>
+    <Menu />
+  </button>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.8rem;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+</style>
