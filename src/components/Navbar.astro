@@ -2,6 +2,18 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo.svg";
 import Menu from "./icons/Menu.astro";
+import { getTranslations } from "../helpers/getTranslations";
+
+const translation = getTranslations(Astro);
+
+const { navbar: navbarTranslation } = translation;
+const {
+  home: homeTranslation,
+  aboutMe: aboutMeTranslation,
+  education: educationTranslation,
+  projects: projectsTranslation,
+  contact: contactTranslation,
+} = navbarTranslation;
 ---
 
 <nav id="navbar">
@@ -12,16 +24,16 @@ import Menu from "./icons/Menu.astro";
       </a>
       <ul class="desktop-menu">
         <li>
-          <a href="#about-me">About Me</a>
+          <a href="#about-me">{aboutMeTranslation}</a>
         </li>
         <li>
-          <a href="#education">Education</a>
+          <a href="#education">{educationTranslation}</a>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <a href="#projects">{projectsTranslation}</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact">{contactTranslation}</a>
         </li>
       </ul>
       <button id="menu-button" aria-label="Open menu">
@@ -31,19 +43,19 @@ import Menu from "./icons/Menu.astro";
   </header>
   <ul class="dropdown-menu">
     <li>
-      <a href="#hero">Home</a>
+      <a href="#hero">{homeTranslation}</a>
     </li>
     <li>
-      <a href="#about-me">About Me</a>
+      <a href="#about-me">{aboutMeTranslation}</a>
     </li>
     <li>
-      <a href="#education">Education</a>
+      <a href="#education">{educationTranslation}</a>
     </li>
     <li>
-      <a href="#projects">Projects</a>
+      <a href="#projects">{projectsTranslation}</a>
     </li>
     <li>
-      <a href="#contact">Contact</a>
+      <a href="#contact">{contactTranslation}</a>
     </li>
   </ul>
 </nav>
