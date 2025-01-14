@@ -37,4 +37,31 @@ export const en = {
       },
     ],
   },
+  projects: {
+    heading: "Projects",
+    content: [
+      {
+        title: "Organize Now",
+        description: [
+          "Organize Now is a user-friendly to-do list application.",
+          "In this project, I developed features such as user authentication, internationalization, and SQL database management, including CRUD operations.",
+        ],
+        technologies: "Technologies: Next.js, Typescript, PostgreSQL.",
+        github: "https://github.com/quibylix/organize-now",
+        website: "https://organize-now.fredibarraza.com",
+      },
+      {
+        title: "Tetris",
+        description: [
+          "The classic game of Tetris, where the player must rotate and move falling blocks to create horizontal lines.",
+          "With this project, I practiced my skills in canvas manipulation, game logic, animations, keyboard events, and state management.",
+        ],
+        technologies: "Technologies: React, Typescript, Canvas.",
+        github: "https://github.com/quibylix/tetris",
+        website: "https://tetris-mocha-rho.vercel.app",
+      },
+    ],
+    code: "Code",
+    website: "Website",
+  },
 };

@@ -1,71 +1,37 @@
 ---
+import { getTranslations } from "../helpers/getTranslations";
 import Github from "./icons/Github.astro";
 import Web from "./icons/Web.astro";
+
+const { projects } = getTranslations(Astro);
+
+const { heading, content, code, website } = projects;
 ---
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2>{heading}</h2>
   <ul>
-    <li>
-      <h3>Organize Now</h3>
-      <p class="technologies">Technologies: Next.js, Typescript, PostgreSQL.</p>
-      <p class="description">
-        Organize Now is a user-friendly to-do list application.
-      </p>
-      <p class="description">
-        In this project, I developed features such as user authentication,
-        internationalization, and SQL database management, including CRUD
-        operations.
-      </p>
-      <div>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/quibylix/organize-now"
-        >
-          Código
-          <Github />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://organize-now.fredibarraza.com"
-        >
-          Sitio web
-          <Web />
-        </a>
-      </div>
-    </li>
-    <li>
-      <h3>Tetris</h3>
-      <p class="technologies">Technologies: React, Typescript, Canvas.</p>
-      <p class="description">
-        The classic game of Tetris, where the player must rotate and move
-        falling blocks to create horizontal lines.
-      </p>
-      <p class="description">
-        With this project, I practiced my skills in canvas manipulation, game
-        logic, animations, keyboard events, and state management.
-      </p>
-      <div>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/quibylix/tetris"
-        >
-          Código
-          <Github />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://tetris-mocha-rho.vercel.app"
-        >
-          Sitio web
-          <Web />
-        </a>
-      </div>
-    </li>
+    {
+      content.map(c => (
+        <li>
+          <h3>{c.title}</h3>
+          <p class="technologies">{c.technologies}</p>
+          {c.description.map(d => (
+            <p class="description">{d}</p>
+          ))}
+          <div>
+            <a target="_blank" rel="noopener noreferrer" href={c.github}>
+              {code}
+              <Github />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href={c.website}>
+              {website}
+              <Web />
+            </a>
+          </div>
+        </li>
+      ))
+    }
   </ul>
 
   <style>
