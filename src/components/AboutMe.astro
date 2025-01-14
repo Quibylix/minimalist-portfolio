@@ -1,13 +1,13 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { aboutMe } = getTranslations(Astro);
+const { heading, content } = aboutMe;
+---
+
 <section id="about-me">
-  <h2>About Me</h2>
-  <p>
-    3rd year Computer Systems Engineering student at the University of El
-    Salvador.
-  </p>
-  <p>
-    Passionate about exploring new technologies, solving complex problems, and
-    playing piano in my free time.
-  </p>
+  <h2>{heading}</h2>
+  {content.map(c => <p>{c}</p>)}
 </section>
 
 <style>
