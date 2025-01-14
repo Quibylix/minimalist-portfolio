@@ -17,8 +17,6 @@ const locale = getLocale(Astro);
   ) as NodeListOf<HTMLSelectElement>;
 
   localeSelect.forEach(select => {
-    console.log(select);
-
     select.addEventListener("change", async () => {
       await fetch("/api/change-locale/" + select.value).catch(() => {
         window.location.reload();
