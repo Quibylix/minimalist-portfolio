@@ -1,20 +1,25 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { education } = getTranslations(Astro);
+const { heading, content } = education;
+---
+
 <section id="education">
-  <h2>Education</h2>
+  <h2>{heading}</h2>
   <ul>
-    <li>
-      <h3>Computer Systems Engineering</h3>
-      <p class="date">2023 - Present</p>
-      <p class="institution">University of El Salvador</p>
-      <p class="description">GPA of 9.0 / 10.0</p>
-      <p class="description">
-        Recognition for the highest honorary GPA in my first year of college.
-      </p>
-    </li>
-    <li>
-      <h3>General High School</h3>
-      <p class="date">2020 - 2021</p>
-      <p class="institution">National Institute "Dr. Sarbelio Navarrete"</p>
-    </li>
+    {
+      content.map(c => (
+        <li>
+          <h3>{c.title}</h3>
+          <p class="date">{c.period}</p>
+          <p class="institution">{c.institution}</p>
+          {c.description.map(d => (
+            <p class="description">{d}</p>
+          ))}
+        </li>
+      ))
+    }
   </ul>
 </section>
 
