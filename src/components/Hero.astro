@@ -1,7 +1,15 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { hero: heroTranslations } = getTranslations(Astro);
+const { title: titleTranslations, description: descriptionTranslations } =
+  heroTranslations;
+---
+
 <section id="hero">
   <h1>Fredi Barraza</h1>
-  <p class="title">Computer Systems Engineering Student</p>
-  <p class="description">Love creating awesome things!</p>
+  <p class="title">{titleTranslations}</p>
+  <p class="description">{descriptionTranslations}</p>
 </section>
 
 <style>
