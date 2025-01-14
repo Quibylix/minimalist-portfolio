@@ -85,4 +85,7 @@ export const es = {
       error: "Algo salió mal",
     },
   },
+  footer: {
+    madeBy: "Hecho por Fredi Barraza ️:)",
+  },
 };

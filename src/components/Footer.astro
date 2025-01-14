@@ -1,5 +1,12 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { footer: footerTranslation } = getTranslations(Astro);
+const { madeBy: madeByTranslation } = footerTranslation;
+---
+
 <footer class="footer">
-  <p>Made with care ❤️</p>
+  <p>{madeByTranslation}</p>
 </footer>
 
 <style>

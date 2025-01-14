@@ -85,4 +85,7 @@ export const en = {
       error: "Something went wrong",
     },
   },
+  footer: {
+    madeBy: "Made by Fredi Barraza :)",
+  },
 };
