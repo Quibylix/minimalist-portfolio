@@ -26,11 +26,11 @@ export const es = {
         period: "2023 - Presente",
         description: [
           "Promedio de 9.0 / 10.0",
-          "Reconocimiento por el promedio más alto de honor en mi primer año de universidad.",
+          "Reconocimiento por el mejor promedio honorífico en mi primer año de carrera.",
         ],
       },
       {
-        title: "Educación Secundaria",
+        title: "Bachillerato General",
         institution: 'Instituto Nacional "Dr. Sarbelio Navarrete"',
         period: "2021 - 2022",
         description: [],
