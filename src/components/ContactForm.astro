@@ -1,3 +1,22 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { contact: contactTranslation } = getTranslations(Astro);
+const { form: formTranslation } = contactTranslation;
+const {
+  name: nameTranslation,
+  yourName: yourNameTranslation,
+  email: emailTranslation,
+  yourEmail: yourEmailTranslation,
+  message: messageTranslation,
+  yourMessage: yourMessageTranslation,
+  send: sendTranslation,
+  wait: waitTranslation,
+  success: successTranslation,
+  error: errorTranslation,
+} = formTranslation;
+---
+
 <form method="POST" id="form">
   <input
     type="hidden"
@@ -6,22 +25,36 @@
   />
 
   <label>
-    Name:
-    <input type="text" name="name" placeholder="Your Name" required />
+    {nameTranslation}
+    <input type="text" name="name" placeholder={yourNameTranslation} required />
   </label>
   <label>
-    Email:
-    <input type="email" name="email" placeholder="Your Email" required />
+    {emailTranslation}
+    <input
+      type="email"
+      name="email"
+      placeholder={yourEmailTranslation}
+      required
+    />
   </label>
   <label
-    >Message:
-    <textarea rows="4" name="message" placeholder="Your Message" required
-    ></textarea>
+    >{messageTranslation}
+    <textarea
+      rows="4"
+      name="message"
+      placeholder={yourMessageTranslation}
+      required></textarea>
   </label>
   <input type="checkbox" name="botcheck" />
 
-  <p id="result"></p>
-  <button type="submit">Send</button>
+  <p
+    data-waitMessage={waitTranslation}
+    data-successMessage={successTranslation}
+    data-errorMessage={errorTranslation}
+    id="result"
+  >
+  </p>
+  <button type="submit">{sendTranslation}</button>
 </form>
 
 <script>
@@ -34,7 +67,7 @@
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    result.innerHTML = "Please wait...";
+    result.innerHTML = result.dataset.waitMessage!;
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -47,13 +80,13 @@
       .then(async response => {
         let json = await response.json();
         if (response.status == 200) {
-          result.innerHTML = "Form submitted successfully";
+          result.innerHTML = result.dataset.successMessage!;
         } else {
           result.innerHTML = json.message;
         }
       })
       .catch(() => {
-        result.innerHTML = "Something went wrong!";
+        result.innerHTML = result.dataset.errorMessage!;
       });
   });
 </script>

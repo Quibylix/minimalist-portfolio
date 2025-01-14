@@ -1,20 +1,32 @@
 ---
+import { getTranslations } from "../helpers/getTranslations";
 import ContactForm from "./ContactForm.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Mail from "./icons/Mail.astro";
 import Twitter from "./icons/Twitter.astro";
+
+const { contact: contactTranslation } = getTranslations(Astro);
+
+const {
+  heading: headingTranslation,
+  socialNetworks: socialNetworksTranslation,
+  twitter: twitterTranslation,
+  linkedIn: linkedInTranslation,
+  email: emailTranslation,
+  orTroughForm: orTroughFormTranslation,
+} = contactTranslation;
 ---
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>You can contact me through my social networks:</p>
+  <h2>{headingTranslation}</h2>
+  <p>{socialNetworksTranslation}</p>
   <div>
     <a
       target="_blank"
       rel="noopener noreferrer"
       href="https://twitter.com/barrazafredi"
     >
-      Twitter
+      {twitterTranslation}
       <Twitter />
     </a>
     <a
@@ -22,7 +34,7 @@ import Twitter from "./icons/Twitter.astro";
       rel="noopener noreferrer"
       href="https://www.linkedin.com/in/fredibarraza"
     >
-      LinkedIn
+      {linkedInTranslation}
       <LinkedIn />
     </a>
     <a
@@ -30,11 +42,11 @@ import Twitter from "./icons/Twitter.astro";
       rel="noopener noreferrer"
       href="mailto:me@fredibarraza.com"
     >
-      Email
+      {emailTranslation}
       <Mail />
     </a>
   </div>
-  <p>Or if you prefer, trough the contact form below:</p>
+  <p>{orTroughFormTranslation}</p>
   <ContactForm />
 </section>
 
