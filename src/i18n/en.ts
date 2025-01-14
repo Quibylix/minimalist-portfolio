@@ -17,4 +17,24 @@ export const en = {
       "Passionate about exploring new technologies, solving complex problems, and playing piano in my free time.",
     ],
   },
+  education: {
+    heading: "Education",
+    content: [
+      {
+        title: "Computer Systems Engineering",
+        institution: "University of El Salvador",
+        period: "2023 - Present",
+        description: [
+          "GPA of 9.0 / 10.0",
+          "Recognition for the highest honorary GPA in my first year of college.",
+        ],
+      },
+      {
+        title: "High School",
+        institution: 'National Institute "Dr. Sarbelio Navarrete"',
+        period: "2021 - 2022",
+        description: [],
+      },
+    ],
+  },
 };
