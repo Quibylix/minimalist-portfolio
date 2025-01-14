@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/logo.svg";
 import Menu from "./icons/Menu.astro";
 import { getTranslations } from "../helpers/getTranslations";
 import SelectLocale from "./SelectLocale.astro";
+import Logo from "./Logo.astro";
 
 const translation = getTranslations(Astro);
 
@@ -22,7 +22,7 @@ const {
   <header>
     <div>
       <a href="#hero" aria-label={scrollToTopTranslation}>
-        <Image src={logo} alt="" loading="eager" />
+        <Logo />
       </a>
       <ul class="desktop-menu">
         <li>
