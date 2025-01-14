@@ -8,6 +8,7 @@ const translation = getTranslations(Astro);
 
 const { navbar: navbarTranslation } = translation;
 const {
+  scrollToTop: scrollToTopTranslation,
   home: homeTranslation,
   aboutMe: aboutMeTranslation,
   education: educationTranslation,
@@ -19,8 +20,8 @@ const {
 <nav id="navbar">
   <header>
     <div>
-      <a href="#hero" aria-label="Scroll to top">
-        <Image src={logo} alt="Fredi Barraza" loading="eager" />
+      <a href="#hero" aria-label={scrollToTopTranslation}>
+        <Image src={logo} alt="" loading="eager" />
       </a>
       <ul class="desktop-menu">
         <li>

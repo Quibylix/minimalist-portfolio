@@ -4,6 +4,7 @@ export const en = {
     description: "Love creating awesome things!",
   },
   navbar: {
+    scrollToTop: "Scroll to top",
     home: "Home",
     aboutMe: "About Me",
     education: "Education",
