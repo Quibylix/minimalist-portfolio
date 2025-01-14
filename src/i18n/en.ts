@@ -1,4 +1,9 @@
 export const en = {
+  document: {
+    title: "Fredi Barraza",
+    description:
+      "Fredi Barraza's personal website with information about his projects, education, and contact.",
+  },
   hero: {
     title: "Computer Systems Engineer Student",
     description: "Love creating awesome things!",

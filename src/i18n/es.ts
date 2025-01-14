@@ -1,4 +1,9 @@
 export const es = {
+  document: {
+    title: "Fredi Barraza",
+    description:
+      "Sitio web personal de Fredi Barraza con información sobre sus proyectos, educación y contacto.",
+  },
   hero: {
     title: "Estudiante de Ingeniería en Sistemas Informáticos",
     description: "¡Apasionado por crear cosas increíbles!",

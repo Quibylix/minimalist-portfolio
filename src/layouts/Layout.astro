@@ -1,7 +1,10 @@
 ---
-import { getLocale } from "../helpers/getTranslations";
+import { getLocale, getTranslations } from "../helpers/getTranslations";
 
 const locale = getLocale(Astro);
+const { document: documentTranslation } = getTranslations(Astro);
+const { title: titleTranslation, description: descriptionTranslation } =
+  documentTranslation;
 ---
 
 <!doctype html>
@@ -22,7 +25,8 @@ const locale = getLocale(Astro);
       href="/light-mode-favicon.svg"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Fredi Barraza - Minimalist Portfolio</title>
+    <title>{titleTranslation}</title>
+    <meta name="description" content={descriptionTranslation} />
   </head>
   <body>
     <slot />
