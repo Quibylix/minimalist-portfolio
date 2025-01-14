@@ -1,0 +1,45 @@
+---
+import { getLocale } from "../helpers/getTranslations";
+
+const locale = getLocale(Astro);
+---
+
+<form>
+  <select name="locale" class="locale-select">
+    <option value="en" selected={locale === "en"}>🇺🇸 EN</option>
+    <option value="es" selected={locale === "es"}>🇪🇸 ES</option>
+  </select>
+</form>
+
+<script>
+  const localeSelect = document.querySelectorAll(
+    ".locale-select"
+  ) as NodeListOf<HTMLSelectElement>;
+
+  localeSelect.forEach(select => {
+    console.log(select);
+
+    select.addEventListener("change", async () => {
+      await fetch("/api/change-locale/" + select.value).catch(() => {
+        window.location.reload();
+      });
+
+      window.location.reload();
+    });
+  });
+</script>
+
+<style>
+  select {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  select:hover {
+    background-color: #f9f9f9;
+  }
+</style>

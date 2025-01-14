@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import logo from "../assets/logo.svg";
 import Menu from "./icons/Menu.astro";
 import { getTranslations } from "../helpers/getTranslations";
+import SelectLocale from "./SelectLocale.astro";
 
 const translation = getTranslations(Astro);
 
@@ -37,6 +38,9 @@ const {
           <a href="#contact">{contactTranslation}</a>
         </li>
       </ul>
+      <span class="desktop-locale">
+        <SelectLocale />
+      </span>
       <button id="menu-button" aria-label="Open menu">
         <Menu />
       </button>
@@ -57,6 +61,9 @@ const {
     </li>
     <li>
       <a href="#contact">{contactTranslation}</a>
+    </li>
+    <li>
+      <SelectLocale />
     </li>
   </ul>
 </nav>
@@ -171,6 +178,10 @@ const {
     gap: 2rem;
   }
 
+  .desktop-locale {
+    display: none;
+  }
+
   a {
     color: #333;
     text-decoration: none;
@@ -217,6 +228,10 @@ const {
 
     .desktop-menu {
       display: flex;
+    }
+
+    .desktop-locale {
+      display: block;
     }
 
     #menu-button {
