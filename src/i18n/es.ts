@@ -76,7 +76,7 @@ export const es = {
     x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
-    orTroughForm: "O si prefieres, mediante el formulario a continuación:",
+    orThroughForm: "O si prefieres, mediante el formulario a continuación:",
     form: {
       name: "Nombre",
       yourName: "Tu Nombre",
