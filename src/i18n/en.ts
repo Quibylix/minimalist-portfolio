@@ -12,7 +12,7 @@ export const en = {
     scrollToTop: "Scroll to top",
     home: "Home",
     aboutMe: "About Me",
-    education: "Education",
+    experience: "Experience",
     projects: "Projects",
     contact: "Contact",
   },

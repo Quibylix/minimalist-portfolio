@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Menu from "./icons/Menu.astro";
 import { getTranslations } from "../helpers/getTranslations";
 import SelectLocale from "./SelectLocale.astro";
@@ -12,7 +11,7 @@ const {
   scrollToTop: scrollToTopTranslation,
   home: homeTranslation,
   aboutMe: aboutMeTranslation,
-  education: educationTranslation,
+  experience: experienceTranslation,
   projects: projectsTranslation,
   contact: contactTranslation,
 } = navbarTranslation;
@@ -29,7 +28,7 @@ const {
           <a href="#about-me">{aboutMeTranslation}</a>
         </li>
         <li>
-          <a href="#education">{educationTranslation}</a>
+          <a href="#experience">{experienceTranslation}</a>
         </li>
         <li>
           <a href="#projects">{projectsTranslation}</a>
@@ -54,7 +53,7 @@ const {
       <a href="#about-me">{aboutMeTranslation}</a>
     </li>
     <li>
-      <a href="#education">{educationTranslation}</a>
+      <a href="#experience">{experienceTranslation}</a>
     </li>
     <li>
       <a href="#projects">{projectsTranslation}</a>

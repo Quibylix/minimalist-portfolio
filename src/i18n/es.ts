@@ -12,7 +12,7 @@ export const es = {
     scrollToTop: "Ir arriba",
     home: "Inicio",
     aboutMe: "Sobre Mí",
-    education: "Educación",
+    experience: "Experiencia",
     projects: "Proyectos",
     contact: "Contacto",
   },
