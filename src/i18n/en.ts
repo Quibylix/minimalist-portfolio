@@ -31,7 +31,7 @@ export const en = {
         institution: "University of El Salvador",
         period: "2023 - Present",
         description: [
-          "GPA of 9.0 / 10.0",
+          "GPA of 8.75 / 10.0",
           "Recognition for the highest honorary GPA in my first year of college.",
         ],
       },

@@ -31,7 +31,7 @@ export const es = {
         institution: "Universidad de El Salvador",
         period: "2023 - Presente",
         description: [
-          "Promedio de 9.0 / 10.0",
+          "Promedio de 8.75 / 10.0",
           "Reconocimiento por el mejor promedio honorífico en mi primer año de carrera.",
         ],
       },
