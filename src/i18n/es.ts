@@ -73,7 +73,7 @@ export const es = {
   contact: {
     heading: "Contacto",
     socialNetworks: "Puedes contactarme mediante mis redes sociales:",
-    twitter: "Twitter",
+    x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
     orTroughForm: "O si prefieres, mediante el formulario a continuación:",
