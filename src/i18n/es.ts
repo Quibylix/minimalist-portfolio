@@ -2,7 +2,7 @@ export const es = {
   document: {
     title: "Fredi Barraza",
     description:
-      "Sitio web personal de Fredi Barraza con información sobre sus proyectos, educación y contacto.",
+      "Sitio web personal de Fredi Barraza con información sobre su experiencia, logros, educación y contacto.",
   },
   hero: {
     title: "Estudiante de Ingeniería en Sistemas Informáticos",
@@ -19,7 +19,7 @@ export const es = {
   aboutMe: {
     heading: "Sobre Mí",
     content: [
-      "Estudiante de 3er año de Ingeniería en Sistemas Computacionales en la Universidad de El Salvador.",
+      "Estudiante de 4to año de Ingeniería en Sistemas Informáticos en la Universidad de El Salvador.",
       "Apasionado por explorar nuevas tecnologías, resolver problemas complejos y tocar el piano en mi tiempo libre.",
     ],
   },
@@ -27,19 +27,37 @@ export const es = {
     heading: "Educación",
     content: [
       {
-        title: "Ingeniería en Sistemas Computacionales",
+        title: "Ingeniería en Sistemas Informáticos",
         institution: "Universidad de El Salvador",
         period: "2023 - Presente",
-        description: [
-          "Promedio de 9.0 / 10.0",
-          "Reconocimiento por el mejor promedio honorífico en mi primer año de carrera.",
-        ],
+        description: ["Promedio de 8.75 / 10.0"],
       },
       {
         title: "Bachillerato General",
         institution: 'Instituto Nacional "Dr. Sarbelio Navarrete"',
         period: "2021 - 2022",
         description: [],
+      },
+    ],
+  },
+  experience: {
+    heading: "Experiencia",
+    content: [
+      {
+        title: "Instructor del Grupo Olímpico de Informática",
+        institution: "Programa Jóvenes Talento, Universidad de El Salvador",
+        period: "2025 - Presente",
+        description: [
+          "Enseñanza de programación competitiva y preparación de estudiantes para la Olimpiada Internacional de Informática (IOI).",
+        ],
+      },
+      {
+        title: "Instructor del Grupo Olímpico de Química",
+        institution: "Programa Jóvenes Talento, Universidad de El Salvador",
+        period: "2023 - 2024",
+        description: [
+          "Enseñanza de química y preparación de estudiantes para la Olimpiada Internacional de Química (IChO).",
+        ],
       },
     ],
   },
@@ -61,13 +79,30 @@ export const es = {
     code: "Código",
     website: "Sitio Web",
   },
+  achievements: {
+    heading: "Logros",
+    content: [
+      {
+        title: "Medallista en olimpiadas internacionales de química",
+        description: [
+          "Medalla de Bronce en la IChO 2021 (Japón) y en la IChO 2022 (China), Medalla de Oro en la OIAQ 2021 y Oro Absoluto en la OIAQ 2022 (Olimpiada Iberoamericana de Química), representando a El Salvador.",
+        ],
+      },
+      {
+        title: "Reconocimiento de promedio honorífico",
+        description: [
+          "Reconocimiento por el mejor promedio honorífico en mis primeros dos años en la Universidad de El Salvador.",
+        ],
+      },
+    ],
+  },
   contact: {
     heading: "Contacto",
     socialNetworks: "Puedes contactarme mediante mis redes sociales:",
     x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
-    orTroughForm: "O si prefieres, mediante el formulario a continuación:",
+    orThroughForm: "O si prefieres, mediante el formulario a continuación:",
     form: {
       name: "Nombre",
       yourName: "Tu Nombre",
@@ -82,6 +117,6 @@ export const es = {
     },
   },
   footer: {
-    madeBy: "Hecho por Fredi Barraza ️:)",
+    madeBy: "Hecho por Fredi Barraza :)",
   },
 };

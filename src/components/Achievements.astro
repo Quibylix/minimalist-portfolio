@@ -1,0 +1,54 @@
+---
+import { getTranslations } from "../helpers/getTranslations";
+
+const { achievements } = getTranslations(Astro);
+const { heading, content } = achievements;
+---
+
+<section id="achievements">
+  <h2>{heading}</h2>
+  <ul>
+    {
+      content.map(c => (
+        <li>
+          <h3>{c.title}</h3>
+          {c.description.map(d => (
+            <p class="description">{d}</p>
+          ))}
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    scroll-margin-top: 4rem;
+    margin: 3rem 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-top: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .description {
+    margin-top: 0.5rem;
+  }
+</style>

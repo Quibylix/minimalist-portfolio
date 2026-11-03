@@ -2,7 +2,7 @@ export const en = {
   document: {
     title: "Fredi Barraza",
     description:
-      "Fredi Barraza's personal website with information about his projects, education, and contact.",
+      "Fredi Barraza's personal website with information about his experience, achievements, education, and contact.",
   },
   hero: {
     title: "Computer Systems Engineer Student",
@@ -19,7 +19,7 @@ export const en = {
   aboutMe: {
     heading: "About Me",
     content: [
-      "3rd year Computer Systems Engineering student at the University of El Salvador.",
+      "4th year Computer Systems Engineering student at the University of El Salvador.",
       "Passionate about exploring new technologies, solving complex problems, and playing piano in my free time.",
     ],
   },
@@ -30,16 +30,34 @@ export const en = {
         title: "Computer Systems Engineering",
         institution: "University of El Salvador",
         period: "2023 - Present",
-        description: [
-          "GPA of 9.0 / 10.0",
-          "Recognition for the highest honorary GPA in my first year of college.",
-        ],
+        description: ["GPA of 8.75 / 10.0"],
       },
       {
         title: "High School",
         institution: 'National Institute "Dr. Sarbelio Navarrete"',
         period: "2021 - 2022",
         description: [],
+      },
+    ],
+  },
+  experience: {
+    heading: "Experience",
+    content: [
+      {
+        title: "Informatics Olympiad Group Instructor",
+        institution: "Jóvenes Talento program, University of El Salvador",
+        period: "2025 - Present",
+        description: [
+          "Taught competitive programming and coached students for the International Olympiad in Informatics (IOI).",
+        ],
+      },
+      {
+        title: "Chemistry Olympiad Group Instructor",
+        institution: "Jóvenes Talento program, University of El Salvador",
+        period: "2023 - 2024",
+        description: [
+          "Taught chemistry and coached students for the International Chemistry Olympiad (IChO).",
+        ],
       },
     ],
   },
@@ -61,13 +79,30 @@ export const en = {
     code: "Code",
     website: "Website",
   },
+  achievements: {
+    heading: "Achievements",
+    content: [
+      {
+        title: "Medalist in international chemistry olympiads",
+        description: [
+          "Bronze medal at the IChO 2021 (Japan) and the IChO 2022 (China), Gold medal at the OIAQ 2021, and Absolute Gold at the OIAQ 2022 (Ibero-American Chemistry Olympiad), representing El Salvador.",
+        ],
+      },
+      {
+        title: "Honorary GPA recognition",
+        description: [
+          "Recognition for the best honorary GPA in my first two years at the University of El Salvador.",
+        ],
+      },
+    ],
+  },
   contact: {
     heading: "Contact",
     socialNetworks: "You can contact me through my social networks:",
     x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
-    orTroughForm: "Or if you prefer, through the contact form below:",
+    orThroughForm: "Or if you prefer, through the contact form below:",
     form: {
       name: "Name",
       yourName: "Your Name",
