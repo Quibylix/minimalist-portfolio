@@ -19,7 +19,7 @@ export const es = {
   aboutMe: {
     heading: "Sobre Mí",
     content: [
-      "Estudiante de 3er año de Ingeniería en Sistemas Computacionales en la Universidad de El Salvador.",
+      "Estudiante de 3er año de Ingeniería en Sistemas Informáticos en la Universidad de El Salvador.",
       "Apasionado por explorar nuevas tecnologías, resolver problemas complejos y tocar el piano en mi tiempo libre.",
     ],
   },
@@ -27,7 +27,7 @@ export const es = {
     heading: "Educación",
     content: [
       {
-        title: "Ingeniería en Sistemas Computacionales",
+        title: "Ingeniería en Sistemas Informáticos",
         institution: "Universidad de El Salvador",
         period: "2023 - Presente",
         description: [
