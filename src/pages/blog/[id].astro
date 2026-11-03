@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <article class="post-wrapper">
+    <header class="post-header">
+      <h1 class="post-title">{post.data.title}</h1>
+      <p class="post-lead">{post.data.description} | {post.data.pubDate.toLocaleDateString()}</p>
+    </header>
+
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-wrapper {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+    color: #22272a;
+    line-height: 1.75;
+  }
+
+  .post-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .post-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #111827;
+    margin: 0 0 1rem 0;
+  }
+
+  .post-lead {
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .post-content :global(p) {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.0625rem;
+  }
+
+  .post-content :global(h1) {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 2.75rem 0 1rem 0;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .post-content :global(h2) {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 2.75rem 0 1rem 0;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 2rem 0 0.75rem 0;
+    line-height: 1.35;
+  }
+
+  .post-content :global(a) {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+  }
+
+  .post-content :global(a:hover) {
+    color: #1d4ed8;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    margin: 0 0 1.5rem 1.5rem;
+    padding: 0;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(blockquote) {
+    margin: 1.75rem 0;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    border-left: 4px solid #3b82f6;
+    background: #f8fafc;
+    color: #4b5563;
+    font-style: italic;
+  }
+  
+  .post-content :global(blockquote p) {
+    font-size: 0.9rem;
+  }
+
+  .post-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  .post-content :global(pre) {
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .post-content :global(code:not(pre code)) {
+    background-color: #f3f4f6;
+    color: #dc2626;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .post-content :global(table) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+
+  .post-content :global(th),
+  .post-content :global(td) {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+  }
+
+  .post-content :global(th) {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
+
+  .post-content :global(hr) {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 3rem 0;
+  }
+</style>

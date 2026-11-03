@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout>
+  <main class="blog-index">
+    <header class="page-header">
+      <h1 class="page-title">My posts</h1>
+      <p class="page-subtitle">A collection of my thoughts, experiences, and learnings.</p>
+    </header>
+
+    <ul class="post-list">
+      {posts.map(post => (
+        <li class="post-item">
+          <a href={`/blog/${post.id}`} class="post-link">
+            <h2 class="post-title">{post.data.title}</h2>
+            <p class="post-date">
+              {post.data.pubDate.toLocaleDateString()}
+            </p>
+            {post.data.description && (
+              <p class="post-description">{post.data.description}</p>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .blog-index {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+    color: #22272a;
+    line-height: 1.75;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #111827;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .post-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .post-item {
+    margin: 0;
+  }
+
+  .post-link {
+    display: block;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+  }
+
+  .post-link:hover {
+    background-color: #f8fafc;
+    border-color: #e5e7eb;
+    transform: translateY(-2px);
+  }
+
+  .post-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+    transition: color 0.2s ease;
+  }
+  
+  .post-link:hover .post-title {
+    color: #2563eb;
+  }
+
+  .post-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0 0 0.75rem 0;
+    font-weight: 500;
+  }
+
+  .post-description {
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+</style>

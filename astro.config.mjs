@@ -1,4 +1,5 @@
 // @ts-check
+import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel";
 import { defineConfig } from "astro/config";
 
@@ -9,4 +10,5 @@ export default defineConfig({
     defaultLocale: "en",
   },
   adapter: vercel(),
+  integrations: [mdx()],
 });
