@@ -31,7 +31,7 @@ export const en = {
         institution: "University of El Salvador",
         period: "2023 - Present",
         description: [
-          "GPA of 8.75 / 10.0",
+          "GPA of 9.0 / 10.0",
           "Recognition for the highest honorary GPA in my first year of college.",
         ],
       },
@@ -47,24 +47,15 @@ export const en = {
     heading: "Projects",
     content: [
       {
-        title: "Organize Now",
+        title: "NegocioSpot",
         description: [
-          "Organize Now is a user-friendly to-do list application.",
-          "In this project, I developed features such as user authentication, internationalization, and SQL database management, including CRUD operations.",
+          "NegocioSpot is a web platform that allows users to discover and connect with local businesses easily and efficiently.",
+          "In this project, I developed features such as Google OAuth authentication, business profiles with custom subdomains, business search and filtering, an admin panel for business owners, and Google Maps integration.",
         ],
-        technologies: "Technologies: Next.js, Typescript, PostgreSQL.",
-        github: "https://github.com/quibylix/organize-now",
-        website: "https://organize-now.fredibarraza.com",
-      },
-      {
-        title: "Tetris",
-        description: [
-          "The classic game of Tetris, where the player must rotate and move falling blocks to create horizontal lines.",
-          "With this project, I practiced my skills in canvas manipulation, game logic, animations, keyboard events, and state management.",
-        ],
-        technologies: "Technologies: React, Typescript, Canvas.",
-        github: "https://github.com/quibylix/tetris",
-        website: "https://tetris-mocha-rho.vercel.app",
+        technologies:
+          "Technologies: Next.js, Typescript, Supabase, Prisma, Mantine.",
+        github: "https://github.com/quibylix/negociospot",
+        website: "https://www.negociospot.com",
       },
     ],
     code: "Code",
@@ -76,7 +67,7 @@ export const en = {
     x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
-    orThroughForm: "Or if you prefer, through the contact form below:",
+    orTroughForm: "Or if you prefer, through the contact form below:",
     form: {
       name: "Name",
       yourName: "Your Name",

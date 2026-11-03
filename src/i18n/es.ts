@@ -19,7 +19,7 @@ export const es = {
   aboutMe: {
     heading: "Sobre Mí",
     content: [
-      "Estudiante de 3er año de Ingeniería en Sistemas Informáticos en la Universidad de El Salvador.",
+      "Estudiante de 3er año de Ingeniería en Sistemas Computacionales en la Universidad de El Salvador.",
       "Apasionado por explorar nuevas tecnologías, resolver problemas complejos y tocar el piano en mi tiempo libre.",
     ],
   },
@@ -27,11 +27,11 @@ export const es = {
     heading: "Educación",
     content: [
       {
-        title: "Ingeniería en Sistemas Informáticos",
+        title: "Ingeniería en Sistemas Computacionales",
         institution: "Universidad de El Salvador",
         period: "2023 - Presente",
         description: [
-          "Promedio de 8.75 / 10.0",
+          "Promedio de 9.0 / 10.0",
           "Reconocimiento por el mejor promedio honorífico en mi primer año de carrera.",
         ],
       },
@@ -47,24 +47,15 @@ export const es = {
     heading: "Proyectos",
     content: [
       {
-        title: "Organize Now",
+        title: "NegocioSpot",
         description: [
-          "Organize Now es una aplicación de lista de tareas fácil de usar.",
-          "En este proyecto, desarrollé características como autenticación de usuarios, internacionalización y gestión de bases de datos SQL, incluidas operaciones CRUD.",
+          "NegocioSpot es una plataforma web que permite descubrir y conectar con negocios locales de forma fácil y eficiente.",
+          "En este proyecto desarrollé características como autenticación con Google OAuth, perfiles de negocios con subdominios personalizados, búsqueda y filtrado de negocios, un panel de administración para dueños de negocios e integración con Google Maps.",
         ],
-        technologies: "Tecnologías: Next.js, Typescript, PostgreSQL.",
-        github: "https://github.com/quibylix/organize-now",
-        website: "https://organize-now.fredibarraza.com",
-      },
-      {
-        title: "Tetris",
-        description: [
-          "El clásico juego de Tetris, donde el jugador debe rotar y mover bloques que caen para crear líneas horizontales.",
-          "Con este proyecto, practiqué mis habilidades en manipulación de canvas, lógica de juego, animaciones, eventos de teclado y gestión de estado.",
-        ],
-        technologies: "Tecnologías: React, Typescript, Canvas.",
-        github: "https://github.com/quibylix/tetris",
-        website: "https://tetris-mocha-rho.vercel.app",
+        technologies:
+          "Tecnologías: Next.js, Typescript, Supabase, Prisma, Mantine.",
+        github: "https://github.com/quibylix/negociospot",
+        website: "https://www.negociospot.com",
       },
     ],
     code: "Código",
@@ -76,7 +67,7 @@ export const es = {
     x: "X",
     linkedIn: "LinkedIn",
     email: "Email",
-    orThroughForm: "O si prefieres, mediante el formulario a continuación:",
+    orTroughForm: "O si prefieres, mediante el formulario a continuación:",
     form: {
       name: "Nombre",
       yourName: "Tu Nombre",
