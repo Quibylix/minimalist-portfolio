@@ -6,6 +6,8 @@ import Logo from "./Logo.astro";
 
 const translation = getTranslations(Astro);
 
+const onHome = Astro.url.pathname === "/";
+
 const { navbar: navbarTranslation } = translation;
 const {
   scrollToTop: scrollToTopTranslation,
@@ -14,27 +16,39 @@ const {
   experience: experienceTranslation,
   projects: projectsTranslation,
   contact: contactTranslation,
+  blog: blogTranslation,
 } = navbarTranslation;
+
+const sectionHrefs = {
+  aboutMe: onHome ? "#about-me" : "/#about-me",
+  experience: onHome ? "#experience" : "/#experience",
+  projects: onHome ? "#projects" : "/#projects",
+  contact: onHome ? "#contact" : "/#contact",
+};
+const logoHref = onHome ? "#hero" : "/";
 ---
 
 <nav id="navbar">
   <header>
     <div>
-      <a href="#hero" aria-label={scrollToTopTranslation}>
+      <a href={logoHref} aria-label={scrollToTopTranslation}>
         <Logo />
       </a>
       <ul class="desktop-menu">
         <li>
-          <a href="#about-me">{aboutMeTranslation}</a>
+          <a href={sectionHrefs.aboutMe}>{aboutMeTranslation}</a>
         </li>
         <li>
-          <a href="#experience">{experienceTranslation}</a>
+          <a href={sectionHrefs.experience}>{experienceTranslation}</a>
         </li>
         <li>
-          <a href="#projects">{projectsTranslation}</a>
+          <a href={sectionHrefs.projects}>{projectsTranslation}</a>
         </li>
         <li>
-          <a href="#contact">{contactTranslation}</a>
+          <a href={sectionHrefs.contact}>{contactTranslation}</a>
+        </li>
+        <li>
+          <a href="/blog">{blogTranslation}</a>
         </li>
       </ul>
       <span class="desktop-locale">
@@ -47,19 +61,22 @@ const {
   </header>
   <ul class="dropdown-menu">
     <li>
-      <a href="#hero">{homeTranslation}</a>
+      <a href={logoHref}>{homeTranslation}</a>
     </li>
     <li>
-      <a href="#about-me">{aboutMeTranslation}</a>
+      <a href={sectionHrefs.aboutMe}>{aboutMeTranslation}</a>
     </li>
     <li>
-      <a href="#experience">{experienceTranslation}</a>
+      <a href={sectionHrefs.experience}>{experienceTranslation}</a>
     </li>
     <li>
-      <a href="#projects">{projectsTranslation}</a>
+      <a href={sectionHrefs.projects}>{projectsTranslation}</a>
     </li>
     <li>
-      <a href="#contact">{contactTranslation}</a>
+      <a href={sectionHrefs.contact}>{contactTranslation}</a>
+    </li>
+    <li>
+      <a href="/blog">{blogTranslation}</a>
     </li>
     <li>
       <SelectLocale />

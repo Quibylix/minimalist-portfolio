@@ -15,6 +15,7 @@ export const en = {
     experience: "Experience",
     projects: "Projects",
     contact: "Contact",
+    blog: "Blog",
   },
   aboutMe: {
     heading: "About Me",
